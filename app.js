@@ -508,6 +508,8 @@ app.get('/me', function (req, res) {
   }
 })
 var folder = require('./lib/folder.js')
+// list notes belonged to the specific folder
+app.get('/folders/:folderId/notes', folder.getNotes)
 // move note
 app.get('/:noteId/move/:folderId', folder.folderMoveNote)
 
