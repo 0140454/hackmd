@@ -512,6 +512,8 @@ var folder = require('./lib/folder.js')
 app.get('/folders/:folderId/notes', folder.getNotes)
 // move note
 app.get('/:noteId/move/:folderId', folder.folderMoveNote)
+// search folders and notes containing keyword
+app.get('/search/:keyword', folder.folderSearch)
 
 // upload image
 app.post('/uploadimage', function (req, res) {
