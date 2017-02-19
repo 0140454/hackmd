@@ -510,6 +510,8 @@ app.get('/me', function (req, res) {
 var folder = require('./lib/folder.js')
 // list notes belonged to the specific folder
 app.get('/folders/:folderId/notes', folder.getNotes)
+// rename folder
+app.get('/folders/:folderId/rename/:newName', folder.folderRename)
 // move note
 app.get('/:noteId/move/:folderId', folder.folderMoveNote)
 // search folders and notes containing keyword
