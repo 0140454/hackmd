@@ -507,6 +507,9 @@ app.get('/me', function (req, res) {
     })
   }
 })
+var folder = require('./lib/folder.js')
+// move note
+app.get('/:noteId/move/:folderId', folder.folderMoveNote)
 
 // upload image
 app.post('/uploadimage', function (req, res) {
