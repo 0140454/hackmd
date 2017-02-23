@@ -514,6 +514,8 @@ app.get('/folders', folder.getAllFolders)
 app.get('/folders/:folderId/notes', folder.getNotes)
 // rename folder
 app.get('/folders/:folderId/rename/:newName', folder.folderRename)
+// create note
+app.get('/folders/:folderId/new/note', folder.folderNewNote)
 // move note
 app.get('/:noteId/move/:folderId', folder.folderMoveNote)
 // search folders and notes containing keyword
