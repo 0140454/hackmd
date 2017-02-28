@@ -512,6 +512,8 @@ var folder = require('./lib/folder.js')
 app.get('/folders', folder.getAllFolders)
 // list notes belonged to the specific folder
 app.get('/folders/:folderId/notes', folder.getNotes)
+// delete folder
+app.get('/folders/:folderId/delete', folder.folderDelete)
 // rename folder
 app.get('/folders/:folderId/rename/:newName', folder.folderRename)
 // create note
