@@ -514,6 +514,8 @@ app.get('/folders', folder.getAllFolders)
 app.get('/folders/:folderId/notes', folder.getNotes)
 // create new folder
 app.get('/folders/:folderId/new/folder/:newName', folder.folderNew)
+// move folder
+app.get('/folders/:folderId/move/:destinationId', folder.folderMove)
 // delete folder
 app.get('/folders/:folderId/delete', folder.folderDelete)
 // rename folder
