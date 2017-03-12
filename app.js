@@ -21,6 +21,7 @@ var helmet = require('helmet')
 var i18n = require('i18n')
 var flash = require('connect-flash')
 var validator = require('validator')
+var LZString = require('lz-string')
 
 // core
 var config = require('./lib/config.js')
@@ -493,7 +494,8 @@ app.get('/me', function (req, res) {
         status: 'ok',
         id: req.user.id,
         name: profile.name,
-        photo: profile.photo
+        photo: profile.photo,
+        folderId: LZString.compressToBase64(req.user.folderId)
       })
     }).catch(function (err) {
       logger.error('read me failed: ' + err)
